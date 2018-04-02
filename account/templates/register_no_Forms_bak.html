@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>注册{{ system_name }}</title>
+    <script>
+        function validate_required(field,alerttxt)
+        {
+            with (field)
+              {
+              if (value==null||value=="")
+                {alert(alerttxt);return false}
+              else {return true}
+              }
+        }
+
+        function validate_form(thisform)
+        {
+        with (thisform)
+          {
+          if (validate_required(email,"Email must be filled out!")==false)
+            {email.focus();return false}
+          }
+        }
+    </script>
+</head>
+
+<body>
+<form action="" onsubmit="return check(this)" method="post">
+    {% csrf_token %}
+    账号:<input type="text" name="user" id="user"> <br/>
+    密码:<input type="password" name="pwd" id="pwd"> <br/>
+    确认密码:<input type="confirm" name="confirm" id="confirm"> <br/>
+    <input type="submit" onclick="check()" value="注册">
+</form>
+</body>
+</html>

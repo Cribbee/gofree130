@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>登录getInfo {{ system_name }}</title>
+</head>
+<body>
+<form method="post">
+    {% csrf_token %}
+    <ul>
+        {{ form }}
+    </ul>
+    <input type="submit" value="登录在getInfo">
+</form>
+</body>
+</html>
